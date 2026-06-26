@@ -1,7 +1,5 @@
 package com.Hall.Lawn.Booking.System.Api.Enums;
 
 public enum Role {
-    consumer,
-    admin,
-    Hall_owner
+   ROLE_ADMIN, ROLE_HALL ,ROLE_CONSUMER;
 }
