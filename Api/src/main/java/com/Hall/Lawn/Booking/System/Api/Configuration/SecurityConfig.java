@@ -1,5 +1,6 @@
 package com.Hall.Lawn.Booking.System.Api.Configuration;
 
+import com.Hall.Lawn.Booking.System.Api.Service.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -13,9 +14,10 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+    private final CustomUserDetailsService userDetailsService;
+    SecurityConfig(CustomUserDetailsService userDetailsService){
 
-    SecurityConfig(){
-
+        this.userDetailsService = userDetailsService;
     }
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -56,7 +58,7 @@ public class SecurityConfig {
         DaoAuthenticationProvider provider =
                 new DaoAuthenticationProvider();
 
-        provider.setUserDetailsService(userDetailsService);
+            provider.setUserDetailsService(userDetailsService);
         provider.setPasswordEncoder(passwordEncoder);
 
         return provider;
