@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class CustomUserDetailsService
         implements UserDetailsService {
 
-    private final com.Hall.Lawn.Booking.System.Api.Repository.UserRepository~~ userRepository;
+    private final com.Hall.Lawn.Booking.System.Api.Repository.UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email)
