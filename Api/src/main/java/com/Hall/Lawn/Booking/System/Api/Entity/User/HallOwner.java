@@ -1,21 +1,16 @@
 package com.Hall.Lawn.Booking.System.Api.Entity.User;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@DiscriminatorValue("HALL")
 @Data
-public class HallOwner extends User{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+@NoArgsConstructor
+@AllArgsConstructor
+public class HallOwner extends User {
+
     private String business;
-    private boolean is_varified;
+    private Boolean is_varified;     // Changed to Boolean
 }
